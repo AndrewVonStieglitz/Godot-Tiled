@@ -6,7 +6,19 @@
          "draworder":"topdown",
          "id":2,
          "name":"Object Layer 1",
-         "objects":[],
+         "objects":[
+                {
+                 "class":"objects\/player",
+                 "height":0,
+                 "id":20,
+                 "name":"",
+                 "point":true,
+                 "rotation":0,
+                 "visible":true,
+                 "width":0,
+                 "x":0,
+                 "y":0
+                }],
          "opacity":1,
          "type":"objectgroup",
          "visible":true,
@@ -14,7 +26,7 @@
          "y":0
         }],
  "nextlayerid":3,
- "nextobjectid":19,
+ "nextobjectid":21,
  "orientation":"orthogonal",
  "renderorder":"right-down",
  "tiledversion":"1.9.2",

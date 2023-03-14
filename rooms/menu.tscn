@@ -1,24 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://ov4l5nfrpdfr"]
+[gd_scene load_steps=2 format=3 uid="uid://ov4l5nfrpdfr"]
 
-[ext_resource type="Texture2D" uid="uid://kqf2ng0qtkx5" path="res://sprites/ram.png" id="1_ssm5l"]
 [ext_resource type="Script" path="res://scripts/CreateWorld.cs" id="2_uvljn"]
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_amr2o"]
-radius = 42.107
 
 [node name="menu" type="Node2D"]
 
 [node name="Camera2D" type="Camera2D" parent="."]
-
-[node name="Player" type="Node2D" parent="."]
-
-[node name="RigidBody2D" type="RigidBody2D" parent="Player"]
-
-[node name="Ram" type="Sprite2D" parent="Player/RigidBody2D"]
-texture = ExtResource("1_ssm5l")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Player/RigidBody2D"]
-shape = SubResource("CircleShape2D_amr2o")
 
 [node name="CreateWorld" type="Node" parent="."]
 script = ExtResource("2_uvljn")

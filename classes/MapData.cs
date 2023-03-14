@@ -51,6 +51,7 @@ public class TiledObject
 	public int id { get; set; }
 	public string name { get; set; }
 	public List<Point> polygon { get; set; }
+	public bool point { get; set; }
 	public int rotation { get; set; }
 	public bool visible { get; set; }
 	public int width { get; set; }

@@ -40,6 +40,12 @@ public partial class CreateWorld : Node
 						collisionPolygon.Polygon = points;
 						staticBody.AddChild(collisionPolygon);
 					}
+					else if (@object.point)
+					{
+						var playerScene = ResourceLoader.Load<PackedScene>("res://objects/player.tscn");
+						var player = playerScene.Instantiate() as Node2D;
+						AddChild(player);
+					}
 					else
 					{
 						var collisionShape = new CollisionShape2D();

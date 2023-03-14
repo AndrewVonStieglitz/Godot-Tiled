@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://bc740gjaaa8yl"]
+
+[ext_resource type="Texture2D" uid="uid://kqf2ng0qtkx5" path="res://sprites/ram.png" id="1_vmulb"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_n4bg4"]
+radius = 42.107
+
+[node name="Player" type="Node2D"]
+
+[node name="RigidBody2D" type="RigidBody2D" parent="."]
+
+[node name="Ram" type="Sprite2D" parent="RigidBody2D"]
+texture = ExtResource("1_vmulb")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
+shape = SubResource("CircleShape2D_n4bg4")
