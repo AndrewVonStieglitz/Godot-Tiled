@@ -1,0 +1,18 @@
+D:\Desktop\Ram Mountain\.godot\mono\temp\obj\Debug\Ram Mountain.csproj.AssemblyReference.cache
+D:\Desktop\Ram Mountain\.godot\mono\temp\obj\Debug\Ram Mountain.GeneratedMSBuildEditorConfig.editorconfig
+D:\Desktop\Ram Mountain\.godot\mono\temp\obj\Debug\Ram Mountain.AssemblyInfoInputs.cache
+D:\Desktop\Ram Mountain\.godot\mono\temp\obj\Debug\Ram Mountain.AssemblyInfo.cs
+D:\Desktop\Ram Mountain\.godot\mono\temp\obj\Debug\Ram Mountain.csproj.CoreCompileInputs.cache
+D:\Desktop\Ram Mountain\.godot\mono\temp\bin\Debug\Ram Mountain.deps.json
+D:\Desktop\Ram Mountain\.godot\mono\temp\bin\Debug\Ram Mountain.runtimeconfig.json
+D:\Desktop\Ram Mountain\.godot\mono\temp\bin\Debug\Ram Mountain.dll
+D:\Desktop\Ram Mountain\.godot\mono\temp\bin\Debug\Ram Mountain.pdb
+D:\Desktop\Ram Mountain\.godot\mono\temp\bin\Debug\GodotSharp.dll
+D:\Desktop\Ram Mountain\.godot\mono\temp\bin\Debug\GodotSharpEditor.dll
+D:\Desktop\Ram Mountain\.godot\mono\temp\obj\Debug\Ram Mountain.csproj.CopyComplete
+D:\Desktop\Ram Mountain\.godot\mono\temp\obj\Debug\Ram Mountain.dll
+D:\Desktop\Ram Mountain\.godot\mono\temp\obj\Debug\refint\Ram Mountain.dll
+D:\Desktop\Ram Mountain\.godot\mono\temp\obj\Debug\Ram Mountain.pdb
+D:\Desktop\Ram Mountain\.godot\mono\temp\obj\Debug\Ram Mountain.genruntimeconfig.cache
+D:\Desktop\Ram Mountain\.godot\mono\temp\obj\Debug\ref\Ram Mountain.dll
+D:\Desktop\Ram Mountain\.godot\mono\temp\bin\Debug\Newtonsoft.Json.dll

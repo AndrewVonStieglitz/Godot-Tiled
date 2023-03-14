@@ -1,0 +1,8 @@
+StaticBody2D
+RigidBody2D
+CollisionShape2D
+Node2D
+Node
+Button
+Camera2D
+RichTextLabel
