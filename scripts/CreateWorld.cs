@@ -23,10 +23,11 @@ public partial class CreateWorld : Node
 
 					if (@object.ellipse)
 					{
-						var circleShape = new CircleShape2D();
-						circleShape.Radius = @object.width / 2;
+						var ellipseShape = new CapsuleShape2D();
+						ellipseShape.Height = @object.height;
+						ellipseShape.Radius = @object.width / 2;
 						var collisionShape = new CollisionShape2D();
-						collisionShape.Shape = circleShape;
+						collisionShape.Shape = ellipseShape;
 						staticBody.AddChild(collisionShape);
 					}
 					else if (@object.polygon != null)
