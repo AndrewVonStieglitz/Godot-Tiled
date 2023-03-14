@@ -4,7 +4,5 @@
 
 [node name="menu" type="Node2D"]
 
-[node name="Camera2D" type="Camera2D" parent="."]
-
 [node name="CreateWorld" type="Node" parent="."]
 script = ExtResource("2_uvljn")

@@ -7,6 +7,13 @@ public partial class CreateWorld : Node
 
 	public override void _Ready()
 	{
+		int[] firstGid = new int[mapData.tilesets.Count];
+
+		for (int i = 0; i < mapData.tilesets.Count; i++)
+		{
+			firstGid[i] = mapData.tilesets[i].firstgid;
+		}
+
 		foreach (Layer layer in mapData.layers)
 		{
 			if (layer.type == "objectgroup")
@@ -86,12 +93,24 @@ public partial class CreateWorld : Node
 					//var sprite = inst.GetNode<Sprite2D>("Sprite2D");
 					//sprite.Frame = tileId - 1;
 
+					//get the firstgid index
+					int firstGidIndex = 0;
+
+					for (int i = 0; i < firstGid.Length; i++)
+					{
+						if (tileId >= firstGid[i])
+						{
+							firstGidIndex = i;
+						}
+					}
+
+
 					var sprite = new Sprite2D();
-					var texture = ResourceLoader.Load<Texture>("res://" + mapData.tilesets[0].image);
+					var texture = ResourceLoader.Load<Texture>("res://" + mapData.tilesets[firstGidIndex].image);
 					sprite.Texture = (Texture2D)texture;
-					sprite.Hframes = mapData.tilesets[0].imagewidth / 32;
-					sprite.Vframes = mapData.tilesets[0].imageheight / 32;
-					sprite.Frame = tileId - 1;
+					sprite.Hframes = mapData.tilesets[firstGidIndex].imagewidth / 32;
+					sprite.Vframes = mapData.tilesets[firstGidIndex].imageheight / 32;
+					sprite.Frame = tileId - firstGid[firstGidIndex];
 
 
 					inst.AddChild(sprite);
