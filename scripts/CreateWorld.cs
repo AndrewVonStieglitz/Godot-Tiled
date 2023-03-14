@@ -24,7 +24,7 @@ public partial class CreateWorld : Node
 					if (@object.ellipse)
 					{
 						var ellipseShape = new CapsuleShape2D();
-						ellipseShape.Height = @object.height;
+						ellipseShape.Height = @object.height / 2;
 						ellipseShape.Radius = @object.width / 2;
 						var collisionShape = new CollisionShape2D();
 						collisionShape.Shape = ellipseShape;
@@ -43,9 +43,10 @@ public partial class CreateWorld : Node
 					}
 					else if (@object.point)
 					{
-						var playerScene = ResourceLoader.Load<PackedScene>("res://objects/player.tscn");
-						var player = playerScene.Instantiate() as Node2D;
-						AddChild(player);
+						var nodeScene = ResourceLoader.Load<PackedScene>("res://" + @object.@class + ".tscn");
+						var inst = nodeScene.Instantiate() as Node2D;
+						AddChild(inst);
+						inst.Position = new Vector2(@object.x, @object.y);
 					}
 					else
 					{
@@ -56,9 +57,47 @@ public partial class CreateWorld : Node
 						staticBody.AddChild(collisionShape);
 					}
 				}
+			}
+			else if (layer.type == "tilelayer")
+			{
+				int tileWidth = mapData.tilewidth;
+				int xx = 0;
+				int yy = 0;
+				foreach (int tileId in layer.data)
+				{
+					if (xx >= mapData.width)
+					{
+						xx = 0;
+						yy += 1;
+					}
+					xx += 1;
+
+					if (tileId == 0)
+					{
+						continue;
+					}
+					var inst = new Node2D();
+					AddChild(inst);
+					inst.Position = new Vector2(
+						xx * tileWidth - (tileWidth / 2),
+						yy * tileWidth + (tileWidth / 2)
+					);
+
+					//var sprite = inst.GetNode<Sprite2D>("Sprite2D");
+					//sprite.Frame = tileId - 1;
+
+					var sprite = new Sprite2D();
+					var texture = ResourceLoader.Load<Texture>("res://" + mapData.tilesets[0].image);
+					sprite.Texture = (Texture2D)texture;
+					sprite.Hframes = mapData.tilesets[0].imagewidth / 32;
+					sprite.Vframes = mapData.tilesets[0].imageheight / 32;
+					sprite.Frame = tileId - 1;
 
 
+					inst.AddChild(sprite);
 
+
+				}
 			}
 		}
 	}
