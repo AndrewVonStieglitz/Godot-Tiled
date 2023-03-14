@@ -52,8 +52,9 @@ public partial class CreateWorld : Node
 					{
 						var nodeScene = ResourceLoader.Load<PackedScene>("res://" + @object.@class + ".tscn");
 						var inst = nodeScene.Instantiate() as Node2D;
-						AddChild(inst);
 						inst.Position = new Vector2(@object.x, @object.y);
+
+						AddChild(inst);
 					}
 					else
 					{
@@ -90,10 +91,6 @@ public partial class CreateWorld : Node
 						yy * tileWidth + (tileWidth / 2)
 					);
 
-					//var sprite = inst.GetNode<Sprite2D>("Sprite2D");
-					//sprite.Frame = tileId - 1;
-
-					//get the firstgid index
 					int firstGidIndex = 0;
 
 					for (int i = 0; i < firstGid.Length; i++)
@@ -104,18 +101,13 @@ public partial class CreateWorld : Node
 						}
 					}
 
-
 					var sprite = new Sprite2D();
 					var texture = ResourceLoader.Load<Texture>("res://" + mapData.tilesets[firstGidIndex].image);
 					sprite.Texture = (Texture2D)texture;
 					sprite.Hframes = mapData.tilesets[firstGidIndex].imagewidth / 32;
 					sprite.Vframes = mapData.tilesets[firstGidIndex].imageheight / 32;
 					sprite.Frame = tileId - firstGid[firstGidIndex];
-
-
 					inst.AddChild(sprite);
-
-
 				}
 			}
 		}
